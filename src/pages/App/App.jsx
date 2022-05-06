@@ -22,6 +22,7 @@ const App = () => {
 			:
 			<AuthPage setUser={setUser}/>
 			}
+			<h1>Welcome</h1>
 		</main>
   	);
 }
