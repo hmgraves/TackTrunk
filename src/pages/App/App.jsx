@@ -4,7 +4,7 @@ import NavBar from '../../components/NavBar/NavBar';
 import { getUser } from '../../utilities/users-service';
 import AuthPage from '../AuthPage/AuthPage';
 import NewOrderPage from '../NewOrderPage/NewOrderPage';
-import OrderHistoryPage from '../OrderHistoryPage/OrderHistoryPage';
+import YourTack from '../YourTack/YourTack';
 import './App.css';
 
 const App = () => {
@@ -16,13 +16,13 @@ const App = () => {
 				<NavBar user={user} setUser={setUser}/>
 				<Routes>
 					<Route path='/orders/new' element={<NewOrderPage />} />
-					<Route path='/orders' element={<OrderHistoryPage />} />
+					<Route path='/tack' element={<YourTack />} />
 				</Routes>	
 			</>
 			:
 			<AuthPage setUser={setUser}/>
 			}
-			<h1>Welcome</h1>
+			<h1>TackTrunk!</h1>
 		</main>
   	);
 }

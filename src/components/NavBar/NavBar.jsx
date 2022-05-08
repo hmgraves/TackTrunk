@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom"
 import * as userService from '../../utilities/users-service';
+import './NavBar.css'
 
 const NavBar = ({ user, setUser }) => {
 	const handleLogOut = () => {
@@ -8,13 +9,11 @@ const NavBar = ({ user, setUser }) => {
 	}
 	return (
 		<nav>
-			<span>Welcome, {user.name}</span>
+			<span className="align-lt">TT &nbsp; | &nbsp; Welcome, {user.name}</span>
+			<Link to="/tack" className="link">Your tack</Link>
 			&nbsp; | &nbsp;
-			<Link to="/orders">Order History</Link>
-			&nbsp; | &nbsp;
-			<Link to="/orders/new">New Order</Link>
-			&nbsp; | &nbsp;
-			<Link to="" onClick={handleLogOut}>Log Out</Link>
+			<Link to="/orders/new" className="link">Add new tack</Link>
+			<Link to="" className="link align-rt" onClick={handleLogOut}>Log Out</Link>
 		</nav>
 	)
 }

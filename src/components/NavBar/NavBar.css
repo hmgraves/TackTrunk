@@ -1,0 +1,17 @@
+nav {
+	background-color: var(--dark-green);
+	position: fixed;
+	text-align: center;
+	align-items: center;
+	width: 100%;
+	padding: 30px;
+	top: 0;
+	right: 0;
+	font-size: 20px;
+}
+
+.link {
+	text-decoration: none;
+	color: var(--text-dark);
+	align-items: center;
+}

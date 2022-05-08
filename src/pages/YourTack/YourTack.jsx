@@ -1,16 +1,18 @@
 import { checkToken } from "../../utilities/users-service";
+import './YourTack.css'
 
-const OrderHistoryPage = () => {
+
+const YourTack = () => {
 	const handleCheckToken = async () => {
 		const expDate = await checkToken();
 		console.log(expDate);
 	};
 	return (
-		<>
-			<h1>OrderHistoryPage</h1>
+		<div className="container" id="tack">
+			<h1>Your tack</h1>
 			<button onClick={handleCheckToken}>Check when my login expires</button>
-		</>
+		</div>
 	);
 };
 
-export default OrderHistoryPage
+export default YourTack
