@@ -1,0 +1,18 @@
+.tackitem {
+	background-color: var(--blue);
+	padding: 20px;
+	width: 40vmin;
+	border-radius: 5px;
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+/* .container {
+	display: grid;
+	column-count: 3;
+} */
+
+.column {
+	float: left;
+	width: 31%;
+	margin: 10px;
+}

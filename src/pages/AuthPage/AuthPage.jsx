@@ -13,7 +13,8 @@ const AuthPage = ({ setUser }) => {
 	};
 	return (
 		<main>
-			<h1>AuthPage</h1>
+			<h1>TackTrunk!</h1>
+			<p>Welcome to TackTrunk! Please login or signup below.</p>
 			<h3 onClick={handleClick}>
 				{
 					currentForm === 'login'

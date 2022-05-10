@@ -12,7 +12,7 @@ const NavBar = ({ user, setUser }) => {
 			<span className="align-lt">TT &nbsp; | &nbsp; Welcome, {user.name}</span>
 			<Link to="/tack" className="link">Your tack</Link>
 			&nbsp; | &nbsp;
-			<Link to="/orders/new" className="link">Add new tack</Link>
+			<Link to="/schedule" className="link">Schedule</Link>
 			<Link to="" className="link align-rt" onClick={handleLogOut}>Log Out</Link>
 		</nav>
 	)
