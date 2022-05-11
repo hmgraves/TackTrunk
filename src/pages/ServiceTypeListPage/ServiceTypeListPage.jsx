@@ -4,7 +4,7 @@ const ServiceTypeList = ({services}) => {
 	return (
 		<div>
 			<br /><br /><br />
-			<h1>Test</h1>
+			<h1>Services</h1>
 			<div>
 				{services.map((service, index) => <ServiceCard service={service} key={index}/>)}
 			</div>

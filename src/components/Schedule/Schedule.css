@@ -1,3 +1,4 @@
-button {
-	background-color: var(--blue);	
+.date-btn {
+	background-color: var(--blue);
+	margin: 10px;
 }

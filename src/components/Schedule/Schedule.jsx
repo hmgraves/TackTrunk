@@ -4,14 +4,14 @@ import Select from 'react-select';
 import { useState } from "react";
 import './Schedule.css';
 
-const Schedule = ({user, appts}) => {
+const Schedule = ({user, services}) => {
 	const [date, setDate] = useState(new Date());
     const [time, setTime] = useState('08:00');
-	// const [selectAppt, setSelectAppt] = useState([]);
+	const [selectService, setSelectService] = useState([]);
 
-	// const apptOptions =  appts.map((appt, idx) => (
-	// 	console.log(appts)
-	// ))
+	const serviceTypes =  services.map((service, idx) => (
+		{ value: `${service._id}` , label: `${service.name}`}
+	))
 
 	return (
 		<div>
@@ -27,14 +27,14 @@ const Schedule = ({user, appts}) => {
 						onChange={setTime}
 						disableClock={true}
 					/>
-					<br />
+					<br /><br />
 					<Select
-						// options={apptOptions}
+						options={serviceTypes}
 						// onChange={}
 						name="Services"
 					/>
 					<br />
-					<button className="btn" type="submit">
+					<button className="date-btn" type="submit">
 						Set Appointment
 					</button>
 				</div>

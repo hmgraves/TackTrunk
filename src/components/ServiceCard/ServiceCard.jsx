@@ -1,7 +1,10 @@
+import './ServiceCard.css';
+
 const ServiceCard = ({ service }) => {
 	return (
-		<div>
+		<div className='service-card'>
 			<h3>{service.name}</h3>
+			<p>{service.price}</p>
 		</div>
 	);
 };

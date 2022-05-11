@@ -6,6 +6,9 @@ const serviceSchema = new Schema({
 		type: String, 
 		required: true
 	},
+	price: {
+		type: String,
+	},
 	sortOrder: Number
 }, {
 	timestamps: true 
