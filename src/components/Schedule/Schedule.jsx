@@ -4,9 +4,14 @@ import Select from 'react-select';
 import { useState } from "react";
 import './Schedule.css';
 
-const Schedule = () => {
+const Schedule = ({user, appts}) => {
 	const [date, setDate] = useState(new Date());
     const [time, setTime] = useState('08:00');
+	// const [selectAppt, setSelectAppt] = useState([]);
+
+	// const apptOptions =  appts.map((appt, idx) => (
+	// 	console.log(appts)
+	// ))
 
 	return (
 		<div>
@@ -24,7 +29,7 @@ const Schedule = () => {
 					/>
 					<br />
 					<Select
-						// value={}
+						// options={apptOptions}
 						// onChange={}
 						name="Services"
 					/>

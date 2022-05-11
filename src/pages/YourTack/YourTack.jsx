@@ -1,6 +1,5 @@
 import { useState } from "react";
 import TackListItem from "../../components/TackList/TackList";
-import { checkToken } from "../../utilities/users-service";
 import './YourTack.css'
 import NewTackForm from "../../components/NewTackForm/NewTackForm";
 import { Link, Route, Routes } from "react-router-dom";

@@ -1,4 +1,3 @@
-import { useState } from "react";
 import NewTackForm from "../../components/NewTackForm/NewTackForm"
 
 const NewTackPage = ({tacks, setTacks}) => {

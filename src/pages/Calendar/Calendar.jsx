@@ -1,13 +1,13 @@
 import Schedule from "../../components/Schedule/Schedule";
 
-const Calendar = () => {
+const Calendar = ({user, services}) => {
 	return (
 		<div>
 			<br />
 			<br />
 			<br />
 			<br />
-			<div><Schedule /></div>
+			<div><Schedule user={user} services={services}/></div>
 		</div>
 	);
 };

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import './NewTackForm.css';
-import { Routes, Route, Redirect } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import YourTack from '../../pages/YourTack/YourTack';
 
 const NewTackForm = ({ addNewTack }) => {
