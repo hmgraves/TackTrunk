@@ -7,8 +7,9 @@ const appointmentSchema = new Schema({
 		type: Schema.Types.ObjectId, 
 		ref: 'User'
 	},
-	services: [servicesSchema],
-	date: Date
+	service: servicesSchema,
+	date: Date,
+	time: String
 }, {
 	timestamps: true
 });

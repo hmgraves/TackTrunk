@@ -1,26 +1,50 @@
 import Calendar from "react-calendar";
+import 'react-calendar/dist/Calendar.css';
 import TimePicker from 'react-time-picker';
 import Select from 'react-select';
 import { useState } from "react";
 import './Schedule.css';
+import { useNavigate } from "react-router-dom";
+// import * as scheduleAPI from '../../utilities/schedule-api'
 
-const Schedule = ({user, services}) => {
+
+const Schedule = ({ services, handleAddService }) => {
 	const [date, setDate] = useState(new Date());
     const [time, setTime] = useState('08:00');
-	const [selectService, setSelectService] = useState([]);
+	const [selectedService, setSelectedService] = useState([]);
+	let navigate = useNavigate;
 
 	const serviceTypes =  services.map((service, idx) => (
-		{ value: `${service._id}` , label: `${service.name}`}
-	))
+		{ value: `${service._id}` , label: `${service.name}`,}
+	));
+
+	const handleSubmit = (evt) => {
+		evt.preventDefault();
+		handleAddService(date, time, selectedService);
+		navigate('./my-schedule');
+	};
+
+	const handleChange = (evt) => {
+		services.map((service) => {
+			if(service._id.includes(evt.value)) {
+				console.log(service)
+				setSelectedService({
+					name: service.name,
+					price: service.price
+				});
+			}; 
+		});
+	};
 
 	return (
 		<div>
-			<form>
+			<form className="calendar" onSubmit={handleSubmit}>
 				<Calendar
 					className="react-calendar"
 					value={date}
 					onChange={setDate}
 				/>
+				<br />
 				<div>
 					<TimePicker
 						value={time}
@@ -30,10 +54,11 @@ const Schedule = ({user, services}) => {
 					<br /><br />
 					<Select
 						options={serviceTypes}
-						// onChange={}
+						onChange={handleChange}
 						name="Services"
+						className="select-services"
 					/>
-					<br />
+					<br /><br />
 					<button className="date-btn" type="submit">
 						Set Appointment
 					</button>

@@ -1,3 +1,10 @@
-# MERN-Stack Infrastructure
+# TackTrunk
 
-Clone this repo to provide the starter code for a comprehensive MERN-Stack project including token-based authentication.
+A full-CRUD application built using React. 
+
+### Technologies Used: 
+1. React
+2. Javascript
+3. MongoDB
+4. Node.js
+5. CSS3

@@ -1,6 +1,6 @@
 nav {
 	background-color: var(--dark-green);
-	position: fixed;
+	position: absolute;
 	text-align: center;
 	align-items: center;
 	width: 100%;

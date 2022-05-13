@@ -1,0 +1,10 @@
+.schedule-card {
+	background-color: var(--yellow);
+	width: 300px;
+	margin: 10px;
+	padding: 10px;
+	border-radius: 10px;
+	display: inline-flex;
+	text-align: center;
+	justify-content: center;
+}

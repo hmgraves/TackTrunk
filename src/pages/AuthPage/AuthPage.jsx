@@ -1,6 +1,7 @@
 import { useState } from "react";
 import LoginForm from "../../components/LoginForm/LoginForm";
-import SignUpForm from "../../components/SignUpForm/SignUpForm"
+import SignUpForm from "../../components/SignUpForm/SignUpForm";
+import './AuthPage.css';
 
 const AuthPage = ({ setUser }) => {
 	const [ currentForm, setCurrentForm ] = useState('login');
@@ -9,10 +10,10 @@ const AuthPage = ({ setUser }) => {
 			setCurrentForm('signup')
 		} else {
 			setCurrentForm('login')
-		}
+		};
 	};
 	return (
-		<main>
+		<main className="auth-background">
 			<h1>TackTrunk!</h1>
 			<p>Welcome to TackTrunk! Please login or signup below.</p>
 			<h3 onClick={handleClick}>
@@ -33,4 +34,4 @@ const AuthPage = ({ setUser }) => {
 	);
 };
 
-export default AuthPage
+export default AuthPage;

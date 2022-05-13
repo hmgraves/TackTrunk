@@ -9,13 +9,24 @@ const NavBar = ({ user, setUser }) => {
 	}
 	return (
 		<nav>
-			<span className="align-lt">TT &nbsp; | &nbsp; Welcome, {user.name}</span>
-			<Link to="/tack" className="link">Your tack</Link>
-			&nbsp; | &nbsp;
-			<Link to="/schedule" className="link">Schedule</Link>
-			&nbsp; | &nbsp;
-			<Link to="/services-types" className="link">Services</Link>
-			<Link to="" className="link align-rt" onClick={handleLogOut}>Log Out</Link>
+			<span className="align-lt">
+				<Link to="/" className="link">TT</Link>
+				&nbsp; | &nbsp;
+				<Link to="/tack" className="link">Your tack</Link>
+				&nbsp; | &nbsp;
+				<Link to="/schedule" className="link">Schedule</Link>
+				&nbsp; | &nbsp;
+				<Link to="/services-types" className="link">Services</Link>
+				&nbsp; | &nbsp;
+				<Link to="/my-schedule" className="link">My Schedule</Link>
+			
+			</span>
+
+			<span className="align-rt">
+				Welcome, {user.name} &nbsp; | &nbsp;
+				<Link to="" className="link" onClick={handleLogOut}>Log Out</Link>
+			</span>
+		
 		</nav>
 	)
 }

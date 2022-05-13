@@ -1,5 +1,6 @@
 /* CSS Custom Properties */
 :root {
+	--background: #F5F5F5;
 	--white: #ffffff;
 	--coral: #f08b8b;
 	--yellow: #fff7ab;
@@ -24,7 +25,7 @@ body {
 		"Helvetica Neue", sans-serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-	background-color: var(--light-green);
+	background-color: var(--background);
 	padding: 2vmin;
 	height: 100vh;
 }
@@ -90,6 +91,8 @@ code {
 	padding: 3vmin;
 	background-color: var(--dark-green);
 	border-radius: 1vmin;
+	width: 100vmin;
+	display: inline-block;
 }
 
 p.error-message {
@@ -97,11 +100,11 @@ p.error-message {
 	text-align: center;
 }
 
-/* form {
+form {
 	display: grid;
 	grid-template-columns: 1fr 3fr;
 	gap: 1.25vmin;
-} */
+}
 
 label {
 	font-size: 2.5vmin;
@@ -114,7 +117,6 @@ input {
 	font-size: 2.5vmin;
 	border: 0.1vmin solid var(--tan-3);
 	border-radius: 0.5vmin;
-	color: var(--text-dark);
 	background-image: none !important; /* prevent lastpass */
 	outline: none;
 }
@@ -123,7 +125,7 @@ input:focus {
 	border-color: var(--blue);
 }
 
-button,
+/* button,
 a.button {
 	padding: 1vmin;
 	color: var(--white);
@@ -161,4 +163,4 @@ button[type="submit"] {
 
 button:hover {
 	opacity: 70%;
-}
+} */
