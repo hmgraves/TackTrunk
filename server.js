@@ -3,6 +3,7 @@ const path = require('path');
 const favicon = require('serve-favicon');
 const logger = require('morgan');
 const ensureLoggedIn = require('./config/ensureLoggedIn');
+const methodOverride = require('method-override');
 
 require('dotenv').config();
 require('./config/database');
@@ -17,6 +18,7 @@ app.use(express.json());
 // to serve from the production 'build' folder
 app.use(favicon(path.join(__dirname, 'build', 'favicon.ico')));
 app.use(express.static(path.join(__dirname, 'build')));
+app.use(methodOverride('_method'));
 
 // Middleware to verify token and assign user object of payload to req.user.
 app.use(require('./config/checkToken'));

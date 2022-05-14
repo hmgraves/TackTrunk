@@ -1,23 +1,19 @@
 const Tack = require('../../models/tack');
 
-const create = (req, res) => {
-	Tack.findById(req.params.id, (err, tack) => {
-		tack.save((err) => {
-			res.redirect()
-		});
-	});
+const create = async (req, res) => {
+	console.log('hits create')
+	req.body.user = req.user._id;
+	const tack = await Tack.create(req.body);
+	res.json(tack);
 };
 
-const deleteTack = (req, res) => {
-	Tack.findOneAndRemove({_id: req.params.id}, (err, tack) => {
-		if (err) {
-			res.redirect('/tack')
-		}
-		res.redirect('/tack')
-	})
+const deleteOne = async (req, res) => {
+	const deletedTack = await Tack.findByIdAndRemove(req.params.id)
+	console.log(deletedTack)
+	res.json(deletedTack);
 };
 
 module.exports = {
 	create,
-	delete: deleteTack,
+	deleteOne,
 };

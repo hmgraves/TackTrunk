@@ -2,6 +2,7 @@ require('dotenv').config();
 require('./config/database');
 
 const Service = require('./models/service');
+const Tack = require('./models/tack');
 
 (async function() {
 	await Service.deleteMany({});
@@ -23,5 +24,20 @@ const Service = require('./models/service');
 		},
 	])
 	console.log(services);
+	process.exit();
+})();
+
+(async function() {
+	await Tack.deleteMany({});
+	const tack = await Tack.create([
+		{
+			name: 'Saddle',
+			brand: 'Butet',
+			color: 'Havana',
+			size: 'Horse',
+			type: 'Saddle'
+		},
+	])
+	console.log(tack);
 	process.exit();
 })();

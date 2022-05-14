@@ -12,7 +12,7 @@ const Schedule = ({ services, handleAddService }) => {
 	const [date, setDate] = useState(new Date());
     const [time, setTime] = useState('08:00');
 	const [selectedService, setSelectedService] = useState([]);
-	let navigate = useNavigate;
+	const navigate = useNavigate();
 
 	const serviceTypes =  services.map((service, idx) => (
 		{ value: `${service._id}` , label: `${service.name}`,}
@@ -21,7 +21,7 @@ const Schedule = ({ services, handleAddService }) => {
 	const handleSubmit = (evt) => {
 		evt.preventDefault();
 		handleAddService(date, time, selectedService);
-		navigate('./my-schedule');
+		navigate('/my-schedule');
 	};
 
 	const handleChange = (evt) => {
@@ -43,6 +43,7 @@ const Schedule = ({ services, handleAddService }) => {
 					className="react-calendar"
 					value={date}
 					onChange={setDate}
+					minDate={new Date()}
 				/>
 				<br />
 				<div>

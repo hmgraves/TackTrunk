@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 const tackSchema = new Schema({
 	name: {
-		tpye: String, 
+		type: String, 
 	},
 	brand: String, 
 	color: String, 
@@ -11,10 +11,10 @@ const tackSchema = new Schema({
 		type: String,
 		enum: ['Mini', 'Pony', 'Cob', 'Horse', 'Warmblood', 'Oversize', 'Small', 'Medium', 'Large', 'Other']
 	}, 
-	// category: {
-	// 	type: Schema.Types.ObjectId, 
-	// 	ref: 'Category',
-	// }
+	type: {
+		type: String, 
+		// ref: 'Category',
+	}
 });
 
 module.exports = mongoose.model('Tack', tackSchema);

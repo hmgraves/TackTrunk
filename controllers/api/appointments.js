@@ -10,12 +10,12 @@ const create = async (req, res) => {
 const getAll = async (req, res) => {
 	const appointment = await Appointment.find({'user': `${req.user._id}`});
 	res.json(appointment);
-}
+};
 
 const deleteOne = async (req, res) => {
-	const appointment = await Appointment.findOneAndDelete(req.body);
-	res.json(appointment);
-}
+	const deletedAppointment = await Appointment.findByIdAndRemove(req.params.id);
+	res.json(deletedAppointment);
+};
 
 module.exports = {
 	create,

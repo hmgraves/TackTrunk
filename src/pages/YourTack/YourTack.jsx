@@ -1,24 +1,25 @@
 import { useState } from "react";
 import TackListItem from "../../components/TackList/TackList";
 import './YourTack.css'
-import NewTackForm from "../../components/NewTackForm/NewTackForm";
 import { Link, Route, Routes } from "react-router-dom";
 import NewTackPage from "../NewTackPage/NewTackPage";
+import * as tackAPI from '../../utilities/tack-api'
 
 
 const YourTack = () => {
-	const [tacks, setTacks] = useState([
-		{ name: 'Bridle', brand: 'Butet', color: 'brown', size: 'horse', type: 'Bridles'},
-		{ name: 'Saddle', brand: 'Butet', color: 'brown', size: 'horse', type: 'Saddles'},
-	]);
-	const addNewTack = (tack) => {
-		setTacks([...tacks, tack])
+	const [tacks, setTacks] = useState([]);
+	
+
+	const updateTack = async (tack) => {
+		const updatedTack = await updateTack(tack);
+		const updatedTacks = tacks.map((t) => t._id === updatedTack._id ? updatedTack : t);
+    	setTacks(updatedTacks);
 	}
+
 	const handleDelete = (tack) => {
 			setTacks(tacks.filter((t) => {
 				return t !== tack;
 			}))
-			localStorage.setItem("tacks", JSON.stringify(tacks));
 	}
 	return (
 		<div className="container" id="tack">
@@ -27,10 +28,8 @@ const YourTack = () => {
 			<TackListItem tacks={tacks} handleDelete={handleDelete}/>
 			<Link to="/tack/new" className="link">Add new tack</Link>
 
-			<NewTackForm addNewTack={addNewTack}/>
-
 			<Routes>
-				<Route path='/tack/new/*' element={<NewTackPage tacks={tacks} setTacks={setTacks}/>} />
+				<Route path='/tack/new/*' element={<NewTackPage tacks={tacks} setTacks={setTacks} updateTack={updateTack}/>} />
 			</Routes>
 		</div>
 	);

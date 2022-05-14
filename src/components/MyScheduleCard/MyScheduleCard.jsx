@@ -1,7 +1,10 @@
 import './MyScheduleCard.css';
 
-const MyScheduleCard = ({ user, schedule }) => {
+const MyScheduleCard = ({ user, schedule, handleDelete }) => {
 	const date = new Date(schedule.date).toLocaleDateString() 
+	const handleReschedule = () => {
+		
+	}
 
 	return (
 		<div className='schedule-card'>
@@ -9,9 +12,11 @@ const MyScheduleCard = ({ user, schedule }) => {
 			<br />
 			When: {date} at {schedule.time}
 			<br />
-			{schedule.service.name}
+			{schedule?.service?.name}
 			<br />
-			{schedule.service.price}
+			{schedule?.service?.price}
+			<br />
+			<button type='submit' onClick={() => handleDelete(schedule._id)}>Delete</button>		
 		</div>
 	);
 };

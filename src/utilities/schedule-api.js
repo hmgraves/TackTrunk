@@ -10,7 +10,13 @@ const addAppointment = (date, time, service) => {
 	return sendRequest(BASE_URL, 'POST', {date, time, service});
 };
 
+const deleteAppointment = (id) => {
+	console.log(id)
+	return sendRequest(`${BASE_URL}/${id}`, 'DELETE', {id});
+};
+
 export {
 	getAll,
-	addAppointment
+	addAppointment,
+	deleteAppointment,
 };
