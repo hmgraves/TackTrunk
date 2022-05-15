@@ -14,9 +14,7 @@ const MySchedulePage = ({ user, services, setServices }) => {
 	}, []);
 	const handleDelete = async (id) => {
 		const deleteService = await scheduleAPI.deleteAppointment(id);
-		console.log(deleteService)
 		const updatedServices = mySchedule.filter(service => service._id !== deleteService._id);
-		console.log(updatedServices)
 		setMySchedule(updatedServices)
 	}
 	return (

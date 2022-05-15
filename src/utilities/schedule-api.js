@@ -11,7 +11,6 @@ const addAppointment = (date, time, service) => {
 };
 
 const deleteAppointment = (id) => {
-	console.log(id)
 	return sendRequest(`${BASE_URL}/${id}`, 'DELETE', {id});
 };
 

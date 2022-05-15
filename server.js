@@ -26,6 +26,7 @@ app.use(require('./config/checkToken'));
 // Put API routes here, before the "catch all" route
 app.use('/api/users', require('./routes/api/users'));
 app.use('/api/services', require('./routes/api/services'));
+app.use('/api/tacks', require('./routes/api/tacks'));
 app.use('/api/schedule', ensureLoggedIn, require('./routes/api/appointments'));
 
 

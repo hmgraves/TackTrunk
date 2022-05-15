@@ -1,9 +1,13 @@
 const Tack = require('../../models/tack');
 
 const create = async (req, res) => {
-	console.log('hits create')
 	req.body.user = req.user._id;
 	const tack = await Tack.create(req.body);
+	res.json(tack);
+};
+
+const getAll = async (req, res) => {
+	const tack = await Tack.find({'user': `${req.user._id}`});
 	res.json(tack);
 };
 
@@ -15,5 +19,6 @@ const deleteOne = async (req, res) => {
 
 module.exports = {
 	create,
+	getAll,
 	deleteOne,
 };

@@ -2,9 +2,20 @@ require('dotenv').config();
 require('./config/database');
 
 const Service = require('./models/service');
-const Tack = require('./models/tack');
+const Category = require('./models/category');
 
 (async function() {
+	await Category.deleteMany({});
+  	const categories = await Category.create([
+		{name: 'Bits', sortOrder: 10},
+		{name: 'Blankets', sortOrder: 20},
+		{name: 'Bridles', sortOrder: 30},
+		{name: 'Girths', sortOrder: 40},
+		{name: 'Saddles', sortOrder: 50},
+		{name: 'Saddle Pads', sortOrder: 60},
+		{name: 'Misc', sortOrder: 70},
+	]);
+
 	await Service.deleteMany({});
 	const services = await Service.create([
 		{
@@ -23,21 +34,6 @@ const Tack = require('./models/tack');
 			sortOrder: 30
 		},
 	])
-	console.log(services);
 	process.exit();
 })();
 
-(async function() {
-	await Tack.deleteMany({});
-	const tack = await Tack.create([
-		{
-			name: 'Saddle',
-			brand: 'Butet',
-			color: 'Havana',
-			size: 'Horse',
-			type: 'Saddle'
-		},
-	])
-	console.log(tack);
-	process.exit();
-})();

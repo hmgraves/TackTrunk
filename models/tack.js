@@ -2,6 +2,10 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const tackSchema = new Schema({
+	user: {
+		type: Schema.Types.ObjectId, 
+		ref: 'User'
+	},
 	name: {
 		type: String, 
 	},
@@ -11,9 +15,9 @@ const tackSchema = new Schema({
 		type: String,
 		enum: ['Mini', 'Pony', 'Cob', 'Horse', 'Warmblood', 'Oversize', 'Small', 'Medium', 'Large', 'Other']
 	}, 
-	type: {
-		type: String, 
-		// ref: 'Category',
+	category: {
+		type: Schema.Types.ObjectId, 
+		ref: 'Category',
 	}
 });
 

@@ -7,8 +7,13 @@ const getAll = () => {
 };
 
 const addTack = (tack) => {
-	console.log(tack)
-	return sendRequest(`${BASE_URL}`, 'POST', {tack});
+	return sendRequest(`${BASE_URL}`, 'POST', {
+		name: tack.name,
+		brand: tack.brand,
+		color: tack.color,
+		size: tack.size,
+		type: tack.type,
+	});
 };
 
 const deleteTack = (id) => {

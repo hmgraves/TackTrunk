@@ -8,3 +8,9 @@
 	text-align: center;
 	justify-content: center;
 }
+
+button {
+	width: 100px;
+	align-items: center;
+	display: flex;
+}

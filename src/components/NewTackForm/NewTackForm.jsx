@@ -3,40 +3,35 @@ import "./NewTackForm.css";
 import { Routes, Route } from "react-router-dom";
 import YourTack from "../../pages/YourTack/YourTack";
 import * as tackAPI from "../../utilities/tack-api";
+import { useNavigate } from "react-router-dom";
 
-const NewTackForm = ({ tacks, setTacks, updateTack }) => {
+const NewTackForm = ({tacks, setTacks}) => {
+	const navigate = useNavigate();
+
 	const [formData, setFormData] = useState(
-		tacks
-			? tacks
-			: {
-					name: "",
-					brand: "",
-					color: "",
-					size: "Mini",
-					type: "Blankets",
-			  }
+		{
+			name: "",
+			brand: "",
+			color: "",
+			size: "Mini",
+			type: "Blankets",
+		}
 	);
 
 	const addTack = async (tack) => {
-		console.log(tack);
-		const newTack = await tackAPI.addTack(tack);
-		setTacks([...tacks, newTack]);
+		await tackAPI.addTack(tack);
 	};
-	
+
+
+	const handleChange = (evt) => {
+		let newFormData = { ...formData, [evt.target.name]: evt.target.value }
+		setFormData(newFormData);
+	};
 
 	const handleSubmit = (evt) => {
 		evt.preventDefault();
-		console.log(formData);
-		if (tacks) {
-			updateTack(formData);
-		} else {
-			addTack(formData);
-		}
-	};
-
-	const handleChange = (evt) => {
-		let newFormData = { ...formData, [evt.target.name]: evt.target.value };
-		setFormData(newFormData);
+		addTack(formData)
+		navigate('/tack');
 	};
 
 	return (
@@ -46,7 +41,7 @@ const NewTackForm = ({ tacks, setTacks, updateTack }) => {
 					Tack: &nbsp;&nbsp;&nbsp;
 					<input
 						name="name"
-						value={formData.name}
+						// value={formData.name}
 						required
 						onChange={handleChange}
 					/>
@@ -56,7 +51,7 @@ const NewTackForm = ({ tacks, setTacks, updateTack }) => {
 					Brand: &nbsp;
 					<input
 						name="brand"
-						value={formData.brand}
+						// value={formData.brand}
 						onChange={handleChange}
 					/>
 				</label>
@@ -65,7 +60,7 @@ const NewTackForm = ({ tacks, setTacks, updateTack }) => {
 					Color: &nbsp;&nbsp;
 					<input
 						name="color"
-						value={formData.color}
+						// value={formData.color}
 						onChange={handleChange}
 					/>
 				</label>
@@ -74,7 +69,7 @@ const NewTackForm = ({ tacks, setTacks, updateTack }) => {
 					Size: &nbsp;&nbsp;&nbsp;&nbsp;
 					<select
 						name="size"
-						value={formData.size}
+						// value={formData.size}
 						onChange={(e) => handleChange(e)}
 					>
 						<option value="mini">Mini</option>
@@ -94,17 +89,17 @@ const NewTackForm = ({ tacks, setTacks, updateTack }) => {
 					Type: &nbsp;&nbsp;&nbsp;
 					<select
 						name="type"
-						value={formData.type}
+						// value={formData.type}
 						required
 						onChange={handleChange}
 					>
-						<option value="blankets">Blankets</option>
-						<option value="boots">Boots</option>
+						<option value="blankets">Bits</option>
+						<option value="boots">Blankets</option>
 						<option value="bridles">Bridles</option>
-						<option value="grooming">Grooming</option>
+						<option value="grooming">Girths</option>
 						<option value="saddles">Saddles</option>
 						<option value="saddle-accessories">
-							Saddle Accessories
+							Saddle Pads
 						</option>
 						<option value="misc">Misc.</option>
 					</select>
@@ -113,7 +108,7 @@ const NewTackForm = ({ tacks, setTacks, updateTack }) => {
 				<button type="submit">Add tack</button>
 			</form>
 			<Routes>
-				<Route path="/tack/*" element={<YourTack tacks={tacks} />} />
+				<Route path="/tack/*" element={<YourTack />} />
 			</Routes>
 		</div>
 	);

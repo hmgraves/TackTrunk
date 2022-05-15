@@ -1,36 +1,55 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import TackListItem from "../../components/TackList/TackList";
 import './YourTack.css'
-import { Link, Route, Routes } from "react-router-dom";
+import { Link } from "react-router-dom";
 import NewTackPage from "../NewTackPage/NewTackPage";
+import CategoryList from "../../components/CategoryList/CategoryList";
 import * as tackAPI from '../../utilities/tack-api'
 
 
-const YourTack = () => {
-	const [tacks, setTacks] = useState([]);
-	
+const YourTack = ({tacks, setTacks }) => {
+	const categoriesRef = useRef([]);
+	const [activeCat, setActiveCat] = useState("");
 
-	const updateTack = async (tack) => {
-		const updatedTack = await updateTack(tack);
-		const updatedTacks = tacks.map((t) => t._id === updatedTack._id ? updatedTack : t);
-    	setTacks(updatedTacks);
+	useEffect(() => {
+	// 	const getTack = async () => {
+	// 		const myTacks = await tackAPI.getAll();
+	// 		setTacks(myTacks);
+	// 	}
+	// 	getTack();
+	// }, []);
+
+	const getTack = async () =>{
+		const myTacks = await tackAPI.getAll();
+		categoriesRef.current = tacks.reduce((cats, item) => {
+			const cat = item.category.name;
+			return cats.includes(cat) ? cats : [...cats, cat];
+		}, []);
+		setActiveCat(categoriesRef.current[1]);
+		setTacks(myTacks);
+	}
+		getTack();
+	})
+
+	const handleDelete = async (tack) => {
+		console.log(tack)
+		const deletedTack = await tackAPI.deleteTack(tack._id);
+		const updatedTack = tacks.filter(tack => tack._id !== deletedTack._id);
+		setTacks(updatedTack)
 	}
 
-	const handleDelete = (tack) => {
-			setTacks(tacks.filter((t) => {
-				return t !== tack;
-			}))
-	}
 	return (
 		<div className="container" id="tack">
 			<br /><br /><br />
 			<h1>Your tack</h1>
-			<TackListItem tacks={tacks} handleDelete={handleDelete}/>
-			<Link to="/tack/new" className="link">Add new tack</Link>
-
-			<Routes>
-				<Route path='/tack/new/*' element={<NewTackPage tacks={tacks} setTacks={setTacks} updateTack={updateTack}/>} />
-			</Routes>
+			<CategoryList
+					categories={categoriesRef.current}
+					activeCat={activeCat}
+					setActiveCat={setActiveCat}
+					use
+			/>
+			<TackListItem tacks={tacks} handleDelete={handleDelete} />
+			<Link to="/tack/new" className="link" element={<NewTackPage tacks={tacks} setTacks={setTacks} />}>Add new tack</Link>
 		</div>
 	);
 };
