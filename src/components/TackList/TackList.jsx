@@ -13,7 +13,7 @@ const TackListItem = ({ tacks, handleDelete }) => {
 					<br />
 					{tack.size}
 					<br />
-					{tack.type}
+					{tack.category}
 					<br />
 					<button type="submit" className="btn btn-danger" onClick={() => handleDelete(tack)}>Delete</button>
 				</div>

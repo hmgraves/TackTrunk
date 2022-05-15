@@ -18,7 +18,7 @@ const addTack = (tack) => {
 
 const deleteTack = (id) => {
 	console.log(id)
-	return sendRequest(`${BASE_URL}/tack/${id}`, 'DELETE', {id});
+	return sendRequest(`${BASE_URL}/${id}`, 'DELETE', {id});
 };
 
 export {

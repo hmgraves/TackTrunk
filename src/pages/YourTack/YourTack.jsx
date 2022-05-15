@@ -11,7 +11,7 @@ const YourTack = ({tacks, setTacks }) => {
 	const categoriesRef = useRef([]);
 	const [activeCat, setActiveCat] = useState("");
 
-	useEffect(() => {
+	// useEffect(() => {
 	// 	const getTack = async () => {
 	// 		const myTacks = await tackAPI.getAll();
 	// 		setTacks(myTacks);
@@ -19,17 +19,30 @@ const YourTack = ({tacks, setTacks }) => {
 	// 	getTack();
 	// }, []);
 
-	const getTack = async () =>{
-		const myTacks = await tackAPI.getAll();
-		categoriesRef.current = tacks.reduce((cats, tack) => {
-			const cat = tack.category.name;
-			return cats.includes(cat) ? cats : [...cats, cat];
-		}, []);
-		setActiveCat(categoriesRef.current[1]);
-		setTacks(myTacks);
-	}
+	// const getTack = async () =>{
+	// 	const myTacks = await tackAPI.getAll();
+	// 	categoriesRef.current = tacks.reduce((cats, tack) => {
+	// 		const cat = tack.category.name;
+	// 		return cats.includes(cat) ? cats : [...cats, cat];
+	// 	}, []);
+	// 	setActiveCat(categoriesRef.current[1]);
+	// 	setTacks(myTacks);
+	// }
+	// 	getTack();
+	// })
+
+	useEffect(function () {
+		const getTack = async () =>{
+			const myTacks = await tackAPI.getAll();
+			categoriesRef.current = tacks.reduce((cats, tack) => {
+				const cat = tack.category.name;
+				return cats.includes(cat) ? cats : [...cats, cat];
+			}, []);
+			setActiveCat(categoriesRef.current[1]);
+			setTacks(myTacks);
+		}
 		getTack();
-	})
+	}, []);
 
 	const handleDelete = async (tack) => {
 		console.log(tack)

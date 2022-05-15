@@ -14,7 +14,7 @@ const NewTackForm = ({tacks, setTacks}) => {
 			brand: "",
 			color: "",
 			size: "Mini",
-			type: "Blankets",
+			category: "Bits",
 		}
 	);
 
@@ -86,9 +86,9 @@ const NewTackForm = ({tacks, setTacks}) => {
 				</label>
 				<br />
 				<label>
-					Type: &nbsp;&nbsp;&nbsp;
+					Category: &nbsp;&nbsp;&nbsp;
 					<select
-						name="type"
+						name="category"
 						// value={formData.type}
 						required
 						onChange={handleChange}
