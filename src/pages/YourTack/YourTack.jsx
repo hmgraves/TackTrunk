@@ -21,8 +21,8 @@ const YourTack = ({tacks, setTacks }) => {
 
 	const getTack = async () =>{
 		const myTacks = await tackAPI.getAll();
-		categoriesRef.current = tacks.reduce((cats, item) => {
-			const cat = item.category.name;
+		categoriesRef.current = tacks.reduce((cats, tack) => {
+			const cat = tack.category.name;
 			return cats.includes(cat) ? cats : [...cats, cat];
 		}, []);
 		setActiveCat(categoriesRef.current[1]);
