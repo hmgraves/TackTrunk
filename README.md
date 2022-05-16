@@ -1,5 +1,8 @@
 # TackTrunk
 
+## View on Heroku
+https://tacktrunk.herokuapp.com/
+
 A full-CRUD application built using React. As we have realized that those in the horse industry like to hoard horse tack, TackTrunk was built to help busy horse barns with scheduling and inventory management. 
 
 ### Screenshots
