@@ -3,7 +3,7 @@ import './MySchedulePage.css';
 import * as scheduleAPI from '../../utilities/schedule-api'
 import { useEffect, useState } from 'react';
 
-const MySchedulePage = ({ user, services, setServices }) => {
+const MySchedulePage = ({ user  }) => {
 	const [mySchedule, setMySchedule] = useState([]);
 	useEffect(() => {
 		const getSchedule = async () => {

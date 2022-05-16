@@ -6,13 +6,32 @@
 	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
 
-/* .container {
+.container {
 	display: grid;
-	column-count: 3;
-} */
+}
 
 .column {
 	float: left;
 	width: 31%;
 	margin: 10px;
+}
+
+.btn-danger {
+	background-color: rgb(246, 75, 75);
+	border: none;
+	font-size: 20px;
+	color: white;
+	align-items: center;
+	justify-content: center;
+	border-radius: 10px;
+}
+
+.btn-danger:hover {
+	cursor: pointer;
+	opacity: 50%;
+}
+
+.title {
+	font-size: large;
+	font-weight: bold;
 }

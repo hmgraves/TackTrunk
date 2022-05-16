@@ -2,6 +2,10 @@ import { sendRequest } from "./SendRequest";
 
 const BASE_URL = '/api/services';
 
-export function getAll() {
+const getAll = () => {
 	return sendRequest(BASE_URL);
+};
+
+export {
+	getAll
 };

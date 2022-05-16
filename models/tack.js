@@ -16,8 +16,8 @@ const tackSchema = new Schema({
 		enum: ['Mini', 'Pony', 'Cob', 'Horse', 'Warmblood', 'Oversize', 'Small', 'Medium', 'Large', 'Other']
 	}, 
 	category: {
-		type: Schema.Types.ObjectId, 
-		ref: 'Category',
+		type: String,
+		enum: ['Bits', 'Blankets', 'Bridles', 'Girths', 'Saddles', 'Saddle Pads', 'Misc.']
 	}
 });
 

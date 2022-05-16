@@ -9,8 +9,27 @@
 	justify-content: center;
 }
 
-button {
-	width: 100px;
+.btn-danger {
+	background-color: rgb(246, 75, 75);
+	border: none;
+	font-size: 20px;
+	color: white;
 	align-items: center;
-	display: flex;
+	justify-content: center;
+	border-radius: 10px;
+}
+
+.btn-danger:hover, .btn-reschedule:hover {
+	cursor: pointer;
+	opacity: 50%;
+}
+
+.btn-reschedule {
+	background-color: var(--blue);
+	border: none;
+	font-size: 20px;
+	color: var(--text-dark);
+	align-items: center;
+	justify-content: center;
+	border-radius: 10px;
 }

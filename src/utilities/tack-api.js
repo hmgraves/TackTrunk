@@ -12,12 +12,11 @@ const addTack = (tack) => {
 		brand: tack.brand,
 		color: tack.color,
 		size: tack.size,
-		type: tack.type,
+		category: tack.category,
 	});
 };
 
 const deleteTack = (id) => {
-	console.log(id)
 	return sendRequest(`${BASE_URL}/${id}`, 'DELETE', {id});
 };
 

@@ -8,13 +8,11 @@ import NewTackPage from '../NewTackPage/NewTackPage';
 import YourTack from '../YourTack/YourTack';
 import MySchedulePage from '../MySchedulePage/MySchedulePage';
 import * as servicesAPI from '../../utilities/services-api';
-import * as scheduleAPI from '../../utilities/schedule-api';
 import './App.css';
 import { useEffect } from 'react';
 import ServiceTypeList from '../ServiceTypeListPage/ServiceTypeListPage';
 import HomePage from '../HomePage/HomePage';
 import CalendarPage from '../Calendar/Calendar';
-// import {loadStripe} from '@stripe/stripe-js';
 
 
 const App = () => {

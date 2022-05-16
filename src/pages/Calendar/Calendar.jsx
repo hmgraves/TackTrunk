@@ -1,11 +1,10 @@
 import Schedule from "../../components/Schedule/Schedule";
 import * as scheduleAPI from '../../utilities/schedule-api'
 
-const CalendarPage = ({user, services, setMySchedule}) => {
+const CalendarPage = ({user, services}) => {
 
 	const handleAddService = async (date, time, setMySchedule) => {
-		const service = await scheduleAPI.addAppointment(date, time, setMySchedule);
-		setMySchedule([...services, service]);
+		await scheduleAPI.addAppointment(date, time, setMySchedule);
 	};
 
 	return (

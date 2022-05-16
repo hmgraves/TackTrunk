@@ -5,33 +5,30 @@ import YourTack from "../../pages/YourTack/YourTack";
 import * as tackAPI from "../../utilities/tack-api";
 import { useNavigate } from "react-router-dom";
 
-const NewTackForm = ({tacks, setTacks}) => {
+const NewTackForm = () => {
 	const navigate = useNavigate();
 
-	const [formData, setFormData] = useState(
-		{
-			name: "",
-			brand: "",
-			color: "",
-			size: "Mini",
-			category: "Bits",
-		}
-	);
+	const [formData, setFormData] = useState({
+		name: "",
+		brand: "",
+		color: "",
+		size: "Mini",
+		category: "Bits",
+	});
 
 	const addTack = async (tack) => {
 		await tackAPI.addTack(tack);
 	};
 
-
 	const handleChange = (evt) => {
-		let newFormData = { ...formData, [evt.target.name]: evt.target.value }
+		let newFormData = { ...formData, [evt.target.name]: evt.target.value };
 		setFormData(newFormData);
 	};
 
 	const handleSubmit = (evt) => {
 		evt.preventDefault();
-		addTack(formData)
-		navigate('/tack');
+		addTack(formData);
+		navigate("/tack");
 	};
 
 	return (
@@ -72,16 +69,16 @@ const NewTackForm = ({tacks, setTacks}) => {
 						// value={formData.size}
 						onChange={(e) => handleChange(e)}
 					>
-						<option value="mini">Mini</option>
-						<option value="pony">Pony</option>
-						<option value="cob">Cob</option>
-						<option value="horse">Horse</option>
-						<option value="warmblood">Warmblood</option>
-						<option value="oversize">Oversize</option>
-						<option value="small">Small</option>
-						<option value="medium">Medium</option>
-						<option value="large">Large</option>
-						<option value="other">Other</option>
+						<option value="Mini">Mini</option>
+						<option value="Pony">Pony</option>
+						<option value="Cob">Cob</option>
+						<option value="Horse">Horse</option>
+						<option value="Warmblood">Warmblood</option>
+						<option value="Oversize">Oversize</option>
+						<option value="Small">Small</option>
+						<option value="Medium">Medium</option>
+						<option value="Large">Large</option>
+						<option value="Other">Other</option>
 					</select>
 				</label>
 				<br />
@@ -93,14 +90,12 @@ const NewTackForm = ({tacks, setTacks}) => {
 						required
 						onChange={handleChange}
 					>
-						<option value="blankets">Bits</option>
-						<option value="boots">Blankets</option>
-						<option value="bridles">Bridles</option>
-						<option value="grooming">Girths</option>
-						<option value="saddles">Saddles</option>
-						<option value="saddle-accessories">
-							Saddle Pads
-						</option>
+						<option value="Bits">Bits</option>
+						<option value="Blankets">Blankets</option>
+						<option value="Bridles">Bridles</option>
+						<option value="Girths">Girths</option>
+						<option value="Saddles">Saddles</option>
+						<option value="Saddle Pads">Saddle Pads</option>
 						<option value="misc">Misc.</option>
 					</select>
 				</label>

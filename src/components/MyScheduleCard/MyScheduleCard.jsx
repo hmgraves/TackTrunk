@@ -12,20 +12,25 @@ const MyScheduleCard = ({ user, schedule, handleDelete }) => {
 
 	return (
 		<div className="schedule-card">
-			{user.name}'s scheduled event:
-			<br />
-			When: {date} at {schedule.time}
+			<span className="title">
+				{date} at {schedule.time}
+			</span>
 			<br />
 			{schedule?.service?.name}
 			<br />
 			{schedule?.service?.price}
 			<br />
 			<br />
-			<button type="submit" onClick={() => handleDelete(schedule._id)}>
+			<button
+				className="btn-danger"
+				type="submit"
+				onClick={() => handleDelete(schedule._id)}
+			>
 				Cancel
 			</button>
 			<br />
 			<button
+				className="btn-reschedule"
 				type="submit"
 				onClick={() => handleReschedule(schedule._id)}
 			>
