@@ -23,7 +23,7 @@ const YourTack = ({tacks, setTacks }) => {
 	}
 
 	return (
-		<div className="container" id="tack">
+		<div id="tack">
 			<br /><br /><br />
 			<h1>Your tack</h1>
 			<Link to="/tack/new" className="new-tack-link" element={<NewTackPage tacks={tacks} setTacks={setTacks} />}>Add new tack</Link>

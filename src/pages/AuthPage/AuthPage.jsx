@@ -19,9 +19,9 @@ const AuthPage = ({ setUser }) => {
 			<h3 onClick={handleClick}>
 				{
 					currentForm === 'login'
-					? <button>Sign Up</button>
+					? <button className="auth-btn">Sign Up</button>
 					:
-					<button>Log in</button>
+					<button className="auth-btn">Log in</button>
 				}
 			</h3>
 			{

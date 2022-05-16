@@ -37,8 +37,8 @@ const NewTackForm = () => {
 				<label>
 					Tack: &nbsp;&nbsp;&nbsp;
 					<input
+						className="tack-input"
 						name="name"
-						// value={formData.name}
 						required
 						onChange={handleChange}
 					/>
@@ -47,8 +47,8 @@ const NewTackForm = () => {
 				<label>
 					Brand: &nbsp;
 					<input
+						className="tack-input"
 						name="brand"
-						// value={formData.brand}
 						onChange={handleChange}
 					/>
 				</label>
@@ -56,8 +56,8 @@ const NewTackForm = () => {
 				<label>
 					Color: &nbsp;&nbsp;
 					<input
+						className="tack-input"
 						name="color"
-						// value={formData.color}
 						onChange={handleChange}
 					/>
 				</label>
@@ -65,8 +65,8 @@ const NewTackForm = () => {
 				<label>
 					Size: &nbsp;&nbsp;&nbsp;&nbsp;
 					<select
+						className="tack-select"
 						name="size"
-						// value={formData.size}
 						onChange={(e) => handleChange(e)}
 					>
 						<option value="Mini">Mini</option>
@@ -85,8 +85,8 @@ const NewTackForm = () => {
 				<label>
 					Category: &nbsp;&nbsp;&nbsp;
 					<select
+						className="tack-select category-select"
 						name="category"
-						// value={formData.type}
 						required
 						onChange={handleChange}
 					>
@@ -96,11 +96,11 @@ const NewTackForm = () => {
 						<option value="Girths">Girths</option>
 						<option value="Saddles">Saddles</option>
 						<option value="Saddle Pads">Saddle Pads</option>
-						<option value="misc">Misc.</option>
+						<option value="Misc.">Misc.</option>
 					</select>
 				</label>
 				<br />
-				<button type="submit">Add tack</button>
+				<button class="add-tack-btn" type="submit">Add tack</button>
 			</form>
 			<Routes>
 				<Route path="/tack/*" element={<YourTack />} />

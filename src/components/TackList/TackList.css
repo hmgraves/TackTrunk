@@ -1,9 +1,11 @@
 .tackitem {
 	background-color: var(--blue);
 	padding: 20px;
-	width: 40vmin;
+	width: 25vmin;
 	border-radius: 5px;
 	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+	margin: 10px;
+	font-size: large;
 }
 
 .container {
@@ -34,4 +36,9 @@
 .title {
 	font-size: large;
 	font-weight: bold;
+}
+
+.tack-container {
+	display: flex;
+	justify-content: center;
 }

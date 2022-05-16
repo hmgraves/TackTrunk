@@ -10,3 +10,19 @@
 	top: 0;
 	position: absolute;
 }
+
+.auth-btn {
+	background-color: var(--yellow);
+	border: none;
+	border-radius: 10px;
+	font-size: large;
+	padding: 10px;
+	justify-content: center;
+	display: inline-flex;
+	align-items: center;
+}
+
+.auth-btn:hover {
+	opacity: 70%;
+	cursor: pointer;
+}

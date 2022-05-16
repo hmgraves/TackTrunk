@@ -6,4 +6,5 @@
 	display: inline-block;
 	border-radius: 10px;
 	color: var(--text-dark);
+	width: 300px;
 }

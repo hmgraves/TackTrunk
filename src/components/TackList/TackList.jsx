@@ -14,7 +14,7 @@ const TackListItem = ({ tacks, handleDelete }) => {
 
 
 		let result = allMatching?.map((tack, index) => (
-			<div className="tackitem">
+			<div className="tackitem" key={index}>
 				<div>
 					Name: {tack?.name}
 				</div>
@@ -40,23 +40,27 @@ const TackListItem = ({ tacks, handleDelete }) => {
 		} else setCurrentCategory(category);
 	}
 
-	const saddles = (
+	const tack = (
 		<>
 		{categoryArray.map((category, index) => (
-			<>
+			<div key={index}>
 				<button className="tackitem button" onClick={() => handleOnClick(category)}>
 					Category: {category}
 				</button>
 				{currentCategory === category && (
 					<div>{renderCategories(category)}</div >
 				)}
-			</>
+			</div>
 		))}
 		</>
 	);
 	
 
-	return saddles;
+	return (
+		<div className="tack-container">
+			{tack}
+		</div>
+	);
 };
 
 export default TackListItem;

@@ -7,16 +7,35 @@
 	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
 
-/* input, select {
+.tack-input {
 	width: 300px;
 	text-align: center;
-} */
+} 
 
-/* select {
+.tack-select {
 	font-size: 2.5vh;
 	border: 0px;
 	height: 30px;
 	border-radius: 5px;
 	color: var(--text-dark);
-	height: 4vmin
-} */
+	height: 4vmin;
+	width: 300px;
+	text-align: center;
+}
+
+.category-select {
+	width: 258px;
+}
+
+.add-tack-btn {
+	background-color: var(--blue);
+	border: none;
+	border-radius: 10px;
+	font-size: large;
+	padding: 10px;
+}
+
+.add-tack-btn:hover {
+	cursor: pointer;
+	opacity: 70%;
+}
