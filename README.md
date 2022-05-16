@@ -1,6 +1,6 @@
 # TackTrunk
 
-A full-CRUD application built using React. 
+A full-CRUD application built using React. TackTrunk was built to help busy horse barns with scheduling and inventory. 
 
 ### Technologies Used: 
 1. React
