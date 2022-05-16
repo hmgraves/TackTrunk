@@ -42,3 +42,8 @@
 	display: flex;
 	justify-content: center;
 }
+
+.cat-button:hover {
+	cursor: pointer;
+	opacity: 70%;
+}

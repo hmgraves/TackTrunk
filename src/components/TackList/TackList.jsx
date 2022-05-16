@@ -44,7 +44,7 @@ const TackListItem = ({ tacks, handleDelete }) => {
 		<>
 		{categoryArray.map((category, index) => (
 			<div key={index}>
-				<button className="tackitem button" onClick={() => handleOnClick(category)}>
+				<button className="tackitem cat-button" onClick={() => handleOnClick(category)}>
 					Category: {category}
 				</button>
 				{currentCategory === category && (
