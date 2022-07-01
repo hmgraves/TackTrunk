@@ -7,6 +7,7 @@ import "./Schedule.css";
 import { useNavigate } from "react-router-dom";
 
 const Schedule = ({ services, handleAddService }) => {
+	
 	const [date, setDate] = useState(new Date());
 	const [time, setTime] = useState("08:00");
 	const [selectedService, setSelectedService] = useState([]);

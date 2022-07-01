@@ -8,6 +8,7 @@ import * as tackAPI from '../../utilities/tack-api'
 
 const YourTack = ({tacks, setTacks }) => {
 
+	// use effect for async function to get all tack for user 
 	useEffect(() => {
 		const getTack = async () => {
 			const myTacks = await tackAPI.getAll();
@@ -16,6 +17,7 @@ const YourTack = ({tacks, setTacks }) => {
 		getTack();
 	}, [setTacks]);
 
+	// async function to handle delete for any tack items
 	const handleDelete = async (tack) => {
 		const deletedTack = await tackAPI.deleteTack(tack._id);
 		const updatedTack = tacks.filter(tack => tack._id !== deletedTack._id);

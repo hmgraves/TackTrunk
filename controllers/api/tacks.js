@@ -13,7 +13,6 @@ const getAll = async (req, res) => {
 
 const deleteOne = async (req, res) => {
 	const deletedTack = await Tack.findByIdAndRemove(req.params.id)
-	console.log(deletedTack)
 	res.json(deletedTack);
 };
 

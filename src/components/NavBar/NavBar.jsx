@@ -3,6 +3,8 @@ import * as userService from '../../utilities/users-service';
 import './NavBar.css'
 
 const NavBar = ({ user, setUser }) => {
+
+	// function to handle user logging out
 	const handleLogOut = () => {
 		userService.logOut();
 		setUser(null);

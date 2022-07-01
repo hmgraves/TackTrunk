@@ -5,13 +5,17 @@ import { useEffect, useState } from 'react';
 
 const MySchedulePage = ({ user  }) => {
 	const [mySchedule, setMySchedule] = useState([]);
+
+	//useEffect hook for side effect - getting the schedule for the user of all upcoming events
 	useEffect(() => {
 		const getSchedule = async () => {
 			const mySchedule = await scheduleAPI.getAll();
 			setMySchedule(mySchedule);
 		}
 		getSchedule();
-	}, []);
+	}, []);	
+
+	// async function to delete any appointents
 	const handleDelete = async (id) => {
 		const deleteService = await scheduleAPI.deleteAppointment(id);
 		const updatedServices = mySchedule.filter(service => service._id !== deleteService._id);

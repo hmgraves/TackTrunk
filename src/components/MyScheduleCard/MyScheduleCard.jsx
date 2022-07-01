@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom";
 import "./MyScheduleCard.css";
 
 const MyScheduleCard = ({ user, schedule, handleDelete }) => {
+	
 	const date = new Date(schedule.date).toLocaleDateString();
 	const navigate = useNavigate();
 
